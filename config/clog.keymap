@@ -1,0 +1,5 @@
+/* source keypos definitions */
+#include "zmk-helpers/key-labels/osprette.h"
+
+/* source the main keymap */
+#include "base.keymap"
