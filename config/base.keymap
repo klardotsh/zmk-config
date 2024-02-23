@@ -7,8 +7,8 @@
 #define L_NUMS 1
 #define L_SYMS 2
 
-#include "combos.dtsi"  // requires layer aliases
-#include "mouse.dtsi"
+//#include "combos.dtsi"  // requires layer aliases
+//#include "mouse.dtsi"
 #include "extra_keys.h"
 
 #define XXX &none
@@ -27,15 +27,6 @@
 
 #define QUICK_TAP_MS 175
 
-&sk {  // sticky-key config
-    release-after-ms = <900>;  // release after 0.6s
-    quick-release;             // no double capitalization when rolling keys
-};
-
-&sl {  // sticky-layer config
-    ignore-modifiers;          // allow chording sticky mods & layers
-};
-
 &lt {  // layer-tap config
     flavor = "balanced";
     tapping-term-ms = <200>;
@@ -44,18 +35,18 @@
 
 /* Combos and chords, the basis of basically this entire layout. */
 #define COMBO_JOINTLY_MS 25
-ZMK_COMBO(c_lsuper, &kp LWIN, LM2 LM1, ALL, COMBO_JOINTLY_MS)
-ZMK_COMBO(c_rsuper, &kp RWIN, RM1 RM2, ALL, COMBO_JOINTLY_MS)
+ZMK_COMBO(c_lsuper, &kp LGUI, LM2 LM1, ALL, COMBO_JOINTLY_MS)
+ZMK_COMBO(c_rsuper, &kp RGUI, RM1 RM2, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_launcher, &kp LG(LS(SPACE)), LM2 LM1 RM1 RM2, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_esc, &kp ESC, LT3 LT2, ALL, COMBO_JOINTLY_MS)
-ZMK_COMBO(c_grv, &kp GRV, LT3 LT2 LT0, ALL, COMBO_JOINTLY_MS)
+ZMK_COMBO(c_grv, &kp GRAVE, LT3 LT2 LT0, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_tab, &kp TAB, LM5 LM4, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_ins, &kp INS, LM5 LM4 LB4, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_mins, &kp MINUS, RM3 RM4, ALL, COMBO_JOINTLY_MS)
-ZMK_COMBO(c_ent, &kp ENTER, RM4 RM5, ALL, COMBO_JOINTLY_MS)
+ZMK_COMBO(c_ent, &kp ENTER, RM4 19, ALL, COMBO_JOINTLY_MS) // RM5 busted. Patch to 19
 ZMK_COMBO(c_slsh, &kp SLASH, RB3 RB4, ALL, COMBO_JOINTLY_MS)
-ZMK_COMBO(c_pipe, &kp BACKSLASH, RM4 RM5 RB4, ALL, COMBO_JOINTLY_MS)
-ZMK_COMBO(c_plus, &kp PLUS, LB0 LB2 LB3, ALL_COMBO_JOINTLY_MS)
+ZMK_COMBO(c_pipe, &kp BACKSLASH, RM4 19 RB4, ALL, COMBO_JOINTLY_MS) // RM5 busted. Patch to 19
+ZMK_COMBO(c_plus, &kp PLUS, LB0 LB2 LB3, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_eql, &kp EQUAL, RB0 RB2 RB3, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_lprn, &kp LPAR, LT0 LT1, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_rprn, &kp RPAR, RT0 RT1, ALL, COMBO_JOINTLY_MS)
@@ -73,7 +64,7 @@ ZMK_COMBO(c_end, &kp END, RM2 RM3, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_pgdn, &kp PG_DN, RB1 RB2, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_supup, &kp LG(UP), LT3 LT2 LT1, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_supleft, &kp LG(LEFT), LM3 LM2 LM1, ALL, COMBO_JOINTLY_MS)
-ZMK_COMBO(c_supright, &kp LG(RIGHT), LM2 LM1 LMB0, ALL, COMBO_JOINTLY_MS)
+ZMK_COMBO(c_supright, &kp LG(RIGHT), LM2 LM1 LM0, ALL, COMBO_JOINTLY_MS) // Was LMB0. Assumed LM0
 ZMK_COMBO(c_supdn, &kp LG(DOWN), LB3 LB2 LB1, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_mfa, &kp LG(O), LT2 LT1 LT0, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_pwd, &kp LG(LC(O)), RT0 RT1 RT2, ALL, COMBO_JOINTLY_MS)
@@ -82,17 +73,6 @@ ZMK_COMBO(c_brightdn, &kp C_BRI_DN, RB1 RB2 RB3, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_voldn, &kp K_VOL_DN, LB2 LB1 LB0, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_volup, &kp K_VOL_UP, RB0 RB1 RB2, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_volmute, &kp K_MUTE, LB2 LB1 LB0 RB0 RB1 RB2, ALL, COMBO_JOINTLY_MS)
-
-/* Caps-word, num-word and smart-mouse */
-
-// // smart-mouse, requires PR #1366
-// ZMK_BEHAVIOR(smart_mouse, tri_state,
-//     bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
-//     ignored-key-positions = <LT1 LT3 RT1 RT2 RT3 RM1 RM2 RM3 RH0 RH1>;
-//     ignored-layers = <MOUSE>;
-// )
-
-/* Custom behaviors */
 
 // misc aliases
 #define C_S_SPACE &kp LC(LS(SPACE))
