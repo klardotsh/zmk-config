@@ -35,7 +35,7 @@
 
 &mt {
 	tapping-term-ms = <200>;
-}
+};
 
 // misc aliases
 #define LG_ENTER &mt LGUI ENTER
