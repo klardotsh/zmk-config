@@ -28,26 +28,38 @@
 #define QUICK_TAP_MS 175
 
 &lt {  // layer-tap config
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP_MS>;
+	flavor = "balanced";
+	tapping-term-ms = <200>;
+	quick-tap-ms = <QUICK_TAP_MS>;
 };
 
+&mt {
+	tapping-term-ms = <200>;
+}
+
+// misc aliases
+#define LG_ENTER &mt LGUI ENTER
+#define RG_ENTER &mt RGUI ENTER
+#define C_S_SPACE &kp LC(LS(SPACE))
+#define A_S_SPACE &kp LA(LS(SPACE))
+#define NUMS_SPACE &lt L_NUMS SPACE
+
 /* Combos and chords, the basis of basically this entire layout. */
-#define COMBO_JOINTLY_MS 25
+#define COMBO_JOINTLY_MS 20
+
 ZMK_COMBO(c_bksp, &kp BSPC, 6 7, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_del, &kp DEL, 4 6 7, ALL, COMBO_JOINTLY_MS)
-ZMK_COMBO(c_lsuper, &kp LGUI, LM2 LM1, ALL, COMBO_JOINTLY_MS)
-ZMK_COMBO(c_rsuper, &kp RGUI, RM1 RM2, ALL, COMBO_JOINTLY_MS)
-ZMK_COMBO(c_launcher, &kp LG(LS(SPACE)), LM2 LM1 RM1 RM2, ALL, COMBO_JOINTLY_MS)
+ZMK_COMBO(c_lsuper, LG_ENTER, LM2 LM1, ALL, COMBO_JOINTLY_MS)
+ZMK_COMBO(c_rsuper, RG_ENTER, RM1 RM2, ALL, COMBO_JOINTLY_MS)
+ZMK_COMBO(c_launcher, &kp LG(SPACE), LM2 LM1 RM1 RM2, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_esc, &kp ESC, LT3 LT2, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_grv, &kp GRAVE, LT3 LT2 LT0, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_tab, &kp TAB, LM5 LM4, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_ins, &kp INS, LM5 LM4 LB4, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_mins, &kp MINUS, RM3 RM4, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_ent, &kp ENTER, RM4 19, ALL, COMBO_JOINTLY_MS) // RM5 busted. Patch to 19
-ZMK_COMBO(c_slsh, &kp SLASH, RB3 RB4, ALL, COMBO_JOINTLY_MS)
-ZMK_COMBO(c_pipe, &kp BACKSLASH, RM4 19 RB4, ALL, COMBO_JOINTLY_MS) // RM5 busted. Patch to 19
+ZMK_COMBO(c_slsh, &kp SLASH, RB2 RB3, ALL, COMBO_JOINTLY_MS)
+ZMK_COMBO(c_pipe, &kp BACKSLASH, RM0 RM2 RM3, ALL, COMBO_JOINTLY_MS) // RM5 busted. Patch to 19
 ZMK_COMBO(c_plus, &kp PLUS, LB0 LB2 LB3, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_eql, &kp EQUAL, RB0 RB2 RB3, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_lprn, &kp LPAR, LT0 LT1, ALL, COMBO_JOINTLY_MS)
@@ -79,11 +91,6 @@ ZMK_COMBO(c_volmute, &kp K_MUTE, LB2 LB1 LB0 RB0 RB1 RB2, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_syms, &mo L_SYMS, LH0 RH0, ALL, COMBO_JOINTLY_MS)
 
 ZMK_COMBO(c_bootloader, &bootloader, 8 9 20 31 32 18 19 29, ALL, COMBO_JOINTLY_MS)
-
-// misc aliases
-#define C_S_SPACE &kp LC(LS(SPACE))
-#define A_S_SPACE &kp LA(LS(SPACE))
-#define NUMS_SPACE &lt L_NUMS SPACE
 
 /* Keymap */
 
