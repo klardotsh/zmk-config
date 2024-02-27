@@ -74,7 +74,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,
 
 /* Combos and chords, the basis of basically this entire layout. */
 #define COMBO_TIGHTLY_MS 10
-#define COMBO_JOINTLY_MS 20
+#define COMBO_JOINTLY_MS 15
 #define COMBO_LAZILY_MS 50
 
 ZMK_COMBO(c_lsuper, LG_ENTER, LM2 LM1, ALL, COMBO_TIGHTLY_MS)
@@ -86,8 +86,8 @@ ZMK_COMBO(c_esc, &kp ESC, LT3 LT2, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_grv, &kp GRAVE, LT3 LT2 LT0, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_tab, &kp TAB, LM5 LM4, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_ins, &kp INS, LM5 LM4 LB4, ALL, COMBO_JOINTLY_MS)
-ZMK_COMBO(c_mins, &kp MINUS, RM3 RM4, ALL, COMBO_JOINTLY_MS)
-ZMK_COMBO(c_ent, &kp ENTER, RM4 19, ALL, COMBO_JOINTLY_MS) // RM5 busted. Patch to 19
+// See comments below about c_end for some more context on this.
+ZMK_COMBO(c_mins, &kp MINUS, RM2 RM3, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_slsh, &kp SLASH, RB2 RB3, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_pipe, &kp BACKSLASH, RM0 RM2 RM3, ALL, COMBO_JOINTLY_MS) // RM5 busted. Patch to 19
 ZMK_COMBO(c_plus, &kp PLUS, LB0 LB2 LB3, ALL, COMBO_JOINTLY_MS)
@@ -104,7 +104,9 @@ ZMK_COMBO(c_arrright, &kp RIGHT, LM0 LM1, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_arrdown, &kp DOWN, LB1 LB2, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_pgup, &kp PG_UP, RT1 RT2, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_home, &kp HOME, RM0 RM1, ALL, COMBO_JOINTLY_MS)
-ZMK_COMBO(c_end, &kp END, RM2 RM3, ALL, COMBO_JOINTLY_MS)
+// End key is asymmetrical with the arrow key cluster but makes room for RM2+RM3
+// dash, which feels way better on Choc spacing than what I originally had designed.
+ZMK_COMBO(c_end, &kp END, RM2 19, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_pgdn, &kp PG_DN, RB1 RB2, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_supup, &kp LG(UP), LT3 LT2 LT1, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_supleft, &kp LG(LEFT), LM3 LM2 LM1, ALL, COMBO_JOINTLY_MS)
