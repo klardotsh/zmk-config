@@ -27,7 +27,7 @@
 
 #define QUICK_TAP_MS 175
 #define TAPPING_TERM_LAYERS 175
-#define PRIOR_IDLE_MS 185
+#define PRIOR_IDLE_MS 170
 #define TAPPING_TERM_MS 250
 
 #undef COMBO_HOOK
@@ -76,7 +76,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,
 #define NUMS_SPACE &lt L_NUMS SPACE
 
 /* Combos and chords, the basis of basically this entire layout. */
-#define COMBO_JOINTLY_MS 15
+#define COMBO_JOINTLY_MS 20
 #define COMBO_LAZILY_MS 50
 
 ZMK_COMBO(c_lsuper, LG_ENTER, LM2 LM1, ALL, COMBO_JOINTLY_MS)
