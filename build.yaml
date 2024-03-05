@@ -17,3 +17,5 @@ include:
     shield: clog_left
   - board: nice_nano
     shield: clog_right
+  - board: nice_nano
+    shield: settings_reset
