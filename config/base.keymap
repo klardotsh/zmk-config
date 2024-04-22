@@ -104,7 +104,7 @@ ZMK_COMBO(c_rbrk, &kp RBKT, RB0 RB1, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_arrup, &kp UP, LT1 LT2, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_arrleft, &kp LEFT, LM2 LM3, ALL, COMBO_JOINTLY_MS)
 // A secondary option since my hands always land here and want to press it anyway
-ZMK_COMBO(c_arrleft, &kp LEFT, LM4 LM3, ALL, COMBO_JOINTLY_MS)
+ZMK_COMBO(c_arrleft2, &kp LEFT, LM4 LM3, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_arrright, &kp RIGHT, LM0 LM1, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_arrdown, &kp DOWN, LB1 LB2, ALL, COMBO_JOINTLY_MS)
 ZMK_COMBO(c_pgup, &kp PG_UP, RT1 RT2, ALL, COMBO_JOINTLY_MS)
