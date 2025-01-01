@@ -7,56 +7,56 @@
 //                                    | LH4  |                   | RH4  |
 //                      | LH3  | LH2  | LH1  | LH0  |     | RH0  | RH1  | RH2  | RH3  |
 
-#define LT0  5  // left-top row
-#define LT1  4
-#define LT2  3
-#define LT3  2
-#define LT4  1
+#define LT0  4  // left-top row
+#define LT1  3
+#define LT2  2
+#define LT3  1
+#define LT4  0
 // LT5 chopped off in 5x3 configuration
 
-#define RT0  6  // right-top row
-#define RT1  7
-#define RT2  8
-#define RT3  9
-#define RT4  10
+#define RT0  5  // right-top row
+#define RT1  6
+#define RT2  7
+#define RT3  8
+#define RT4  9
 // RT5 chopped off in 5x3 configuration
 
-#define LM0 17  // left-middle row
-#define LM1 16
-#define LM2 15
-#define LM3 14
-#define LM4 13
+#define LM0 14  // left-middle row
+#define LM1 13
+#define LM2 12
+#define LM3 11
+#define LM4 10
 // LM5 chopped off in 5x3 configuration
 
-#define RM0 18  // right-middle row
-#define RM1 19
-#define RM2 20
-#define RM3 21
-#define RM4 22
+#define RM0 15  // right-middle row
+#define RM1 16
+#define RM2 17
+#define RM3 18
+#define RM4 19
 // RM5 chopped off in 5x3 configuration
 
-#define LB0 29  // left-bottom row
-#define LB1 28
-#define LB2 27
-#define LB3 26
-#define LB4 25
+#define LB0 24  // left-bottom row
+#define LB1 23
+#define LB2 22
+#define LB3 21
+#define LB4 20
 // LB5 chopped off in 5x3 configuration
 
-#define RB0 30  // right-bottom row
-#define RB1 31
-#define RB2 32
-#define RB3 33
-#define RB4 34
+#define RB0 25  // right-bottom row
+#define RB1 26
+#define RB2 27
+#define RB3 28
+#define RB4 29
 // RB5 chopped off in 5x3 configuration
 
-#define LH0 41  // left thumb keys
-#define LH1 40
-#define LH2 39
-#define LH3 38
-#define LH4 36
+#define LH0 35  // left thumb keys
+#define LH1 34
+#define LH2 33
+#define LH3 32
+#define LH4 30
 
-#define RH0 42  // right thumb keys
-#define RH1 43
-#define RH2 44
-#define RH3 45
-#define RH4 37
+#define RH0 36  // right thumb keys
+#define RH1 37
+#define RH2 38
+#define RH3 39
+#define RH4 31
