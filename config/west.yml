@@ -26,12 +26,17 @@ manifest:
       url-base: https://github.com/urob
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: klardotsh
+      url-base: https://github.com/klardotsh
 
   projects:
     # This is vanilla ZMK - just using my remote to pin the current state of main,
     # as upstream hasn't yet released a version with mouse.
+    #
+    # klardotsh edit: and then I pinned further ahead so that HSV support exists
     - name: zmk
-      revision: v0.1+mouse
+      remote: klardotsh
+      revision: hillsideview
       import: app/west.yml
 
     # ZMK modules
@@ -67,7 +72,7 @@ manifest:
           - hal_ti
           - loramac-node
           - mcuboot
-          - mcumgr
+          - mcumgrkk
           - net-tools
           - openthread
           - edtt
