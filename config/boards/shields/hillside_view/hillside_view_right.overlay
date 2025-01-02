@@ -10,12 +10,6 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/input/input-event-codes.h>
 
-&glidepoint_split {
-    device = <&glidepoint0>;
-
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
-};
-
 &default_transform {
   col-offset = <6>;
 };
@@ -46,3 +40,24 @@
 &nice_view {
   status = "okay";
 };
+
+&i2c0 {
+    status = "okay";
+    glidepoint0: glidepoint@2a {
+        compatible = "cirque,pinnacle";
+        reg = <0x2a>;
+        status = "okay";
+        dr-gpios = <&gpio1 2 (GPIO_ACTIVE_HIGH)>;
+
+        sensitivity = "4x";
+        // sleep;
+        no-taps;
+    };
+};
+
+&glidepoint_split {
+    device = <&glidepoint0>;
+
+    // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+};
+

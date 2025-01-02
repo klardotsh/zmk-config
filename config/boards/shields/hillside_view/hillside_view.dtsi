@@ -99,20 +99,6 @@ nice_view_spi: &spi1 {
   };
 };
 
-&i2c0 {
-    status = "okay";
-    glidepoint0: glidepoint@2a {
-        compatible = "cirque,pinnacle";
-        reg = <0x2a>;
-        status = "okay";
-        dr-gpios = <&gpio1 2 (GPIO_ACTIVE_HIGH)>;
-
-        sensitivity = "4x";
-        sleep;
-        no-taps;
-    };
-};
-
 / {
     split_inputs {
         #address-cells = <1>;
