@@ -6,6 +6,13 @@
 
 #include "hillside_view.dtsi"
 
+#include <dt-bindings/zmk/input_transform.h>
+#include <dt-bindings/input/input-event-codes.h>
+
+&glidepoint_listener {
+    status = "okay";
+};
+
 &kscan0  {
     col-gpios
         = <&gpio1 7 GPIO_ACTIVE_HIGH>
@@ -15,12 +22,6 @@
         , <&pro_micro 16 GPIO_ACTIVE_HIGH>
         , <&pro_micro 10 GPIO_ACTIVE_HIGH>
         ;
-};
-
-&left_encoder {
-    status = "okay";
-  a-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-  b-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 };
 
 &chosen {

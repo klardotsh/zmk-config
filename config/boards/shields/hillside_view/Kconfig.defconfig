@@ -24,11 +24,11 @@ config ZMK_RGB_UNDERGLOW
     select SPI
 
 config ZMK_DISPLAY
-    select LV_FONT_MONTSERRAT_26
+    select LV_FONT_MONTSERRAT_48
 
 if ZMK_MOUSE
 
-config SPI
+config I2C
   default y
 
 endif # ZMK_MOUSE
