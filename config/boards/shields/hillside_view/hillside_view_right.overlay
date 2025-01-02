@@ -11,7 +11,7 @@
 };
 
 &five_column_transform {
-  col-offset = <6>;
+    col-offset = <6>;
 };
 
 &kscan0 {
@@ -29,6 +29,21 @@
   status = "okay";
 };
 
+// trackball bus
+/* &spi0 { */
+/*   status = "okay"; */
+/*   sck-pin = <20>; */
+/*   mosi-pin = <17>; */
+/*   miso-pin = <17>; // same as mosi (3-wire spi) */
+/*   cs-gpios = <&gpio0 22 GPIO_ACTIVE_LOW>; */
+/* }; */
+
+/* &trackball { */
+/*   status = "okay"; */
+/*   irq-gpios = <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; */
+/* }; */
+
+
 &chosen {
   zephyr,display = &nice_view;
 };
@@ -39,32 +54,4 @@
 
 &nice_view {
   status = "okay";
-};
-
-&i2c0 {
-    status = "okay";
-    glidepoint0: glidepoint@2a {
-        status = "okay";
-    };
-};
-
-/ {
-    /* THIS only makes keymap binding happy, nothing happens on peripheral side */
-	glidepoint1: virtual_input {
-		compatible = "zmk,virtual-input";
-	};
-
-    input_relay_config_102 {
-        compatible = "zmk,split-peripheral-input-relay";
-
-        /* peripheral side input device, used to... */
-		/*  - be intecepted on peripheral; */
-		/*  - and then, be resurrected as `zmk,virtual-device` on central; */
-        device = <&glidepoint0>;
-
-        /* channel id, used to be be transfered along with all input events. */
-		/* NOTE 1: pick any 8bit integer. (1 - 255) */
-		/* NOTE 2: should matching relay-channel on central overlay */
-		relay-channel = <102>;
-    };
 };
