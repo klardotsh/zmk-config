@@ -1,5 +1,5 @@
-#define L_DVORAK 0
-#define L_ENGRAM 1
+#define L_ENGRAM 0
+#define L_DVORAK 1
 #define L_SYMS 2
 #define L_NUMS 3
 #define L_NAV 4
@@ -22,7 +22,7 @@
         compatible = "zmk,input-behavior-listener";
         device = <&glidepoint0>;
         y-invert;
-        scale-multiplier = <2>;
+        scale-multiplier = <5>;
         // xy-swap;
         // x-invert;
 	};
@@ -32,7 +32,7 @@
         device = <&glidepoint1>;
         layers = <L_DVORAK L_ENGRAM L_SYMS L_NAV>;
         y-invert;
-        scale-multiplier = <2>;
+        scale-multiplier = <5>;
         /* NOTE: do NOT override event code here, */
         /*       let Cirque glidepoint reports click from taps */
         // evt-type = <INPUT_EV_REL>;
@@ -84,13 +84,13 @@ ZMK_COMBO(c_bootloader, &bootloader, LH3 LH2 LH0 RH0 RH2 RH3, ALL, COMBO_LAZILY_
 
 /* Keymap */
 
-ZMK_LAYER(dvorak,
+ZMK_LAYER(engram,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                                                         ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     &kp SQT       &kp COMMA     &kp DOT       &kp P         &mt LPAR Y                                                              &mt RPAR F    &kp G         &kp C         &kp R         &kp L
+     &kp B         &kp Y         &kp O         &kp U         &mt LPAR SQT                                                            &mt RPAR Q    &kp L         &kp D         &kp W         &kp V
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                                                         ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &kp A         &kp O         &kp E         &hml LGUI U   &mt LBKT I                                                              &mt RBKT D    &hmr RGUI H   &kp T         &kp N         &kp S
+     &kp C         &kp I         &kp E         &hml LGUI A   &mt LBKT COMMA                                                          &mt RBKT DOT  &hmr RGUI H   &kp T         &kp S         &kp N
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                                                         ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &kp SEMI      &kp Q         &kp J         &kp K         &mt LBRC X                                                              &mt RBRC B    &kp M         &kp W         &kp V         &kp Z
+     &mt COLON G   &kp X         &kp J         &kp K         &mt LBRC Z                                                              &mt RBRC SLASH &kp R        &kp M         &kp F         &mt SEMI P
 // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┼─────────────╮                             ╭─────────────┼─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
                                                                            NAV_DEL                                     &mkp LCLK
 //                                           ╭─────────────┬─────────────┼─────────────┼─────────────╮ ╭─────────────┼─────────────┼─────────────┬─────────────╮
@@ -98,13 +98,13 @@ ZMK_LAYER(dvorak,
 //                                           ╰─────────────┴─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────┴─────────────╯
 )
 
-ZMK_LAYER(engram,
+ZMK_LAYER(dvorak,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                                                         ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     &kp B         &kp Y         &kp O         &kp U         &mt LPAR SQT                                                            &mt RPAR Z    &kp L         &kp D         &kp W         &kp V
+     &kp SQT       &kp COMMA     &kp DOT       &kp P         &mt LPAR Y                                                              &mt RPAR F    &kp G         &kp C         &kp R         &kp L
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                                                         ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &kp C         &kp I         &kp E         &hml LGUI A   &mt LBKT COMMA                                                          &mt RBKT DOT  &hmr RGUI H   &kp T         &kp S         &kp N
+     &kp A         &kp O         &kp E         &hml LGUI U   &mt LBKT I                                                              &mt RBKT D    &hmr RGUI H   &kp T         &kp N         &kp S
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                                                         ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &mt COLON G   &kp X         &kp J         &kp K         &mt LBRC Q                                                              &mt RBRC SLASH &kp R        &kp M         &kp F         &mt SEMI P
+     &mt COLON SEMI &kp Q        &kp J         &kp K         &mt LBRC X                                                              &mt RBRC B    &kp M         &kp W         &kp V         &mt SEMI Z
 // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┼─────────────╮                             ╭─────────────┼─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
                                                                            NAV_DEL                                     &mkp LCLK
 //                                           ╭─────────────┬─────────────┼─────────────┼─────────────╮ ╭─────────────┼─────────────┼─────────────┬─────────────╮
@@ -114,7 +114,7 @@ ZMK_LAYER(engram,
 
 ZMK_LAYER(syms,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                                                         ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     &kp EXCL      &kp AT        &kp POUND     &kp DLLR      &kp PRCNT                                                               &kp CARET     &kp AMPS      &kp STAR      &kp LPAR      &kp RPAR
+     &kp EXCL      &kp AT        &kp POUND     &kp DLLR      &kp LT                                                                  &kp GT        &kp PRCNT     &kp CARET     &kp AMPS      &kp STAR
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                                                         ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      XXX           XXX           XXX           XXX           XXX                                                                     XXX           XXX           XXX           XXX           XXX
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                                                         ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
